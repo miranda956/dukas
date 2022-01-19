@@ -1,6 +1,6 @@
-import express from "express";
-import User from "../models/userModel";
-import {getToken,isAuth} from "../utils";
+const  express = require("express");
+const  User = require ("../models/userModel");
+const  {getToken,isAuth} = require ("../utils");
 
 const router =express.Router();
 
@@ -76,3 +76,5 @@ router.put("/:id", isAuth, async(req,res)=>{
         })
     }
 })
+
+module.exports = router;

@@ -1,5 +1,5 @@
-import jwt from "jsonwebtoken";
-import config from "./config";
+const  jwt = require ("jsonwebtoken");
+const  config = require ("./config");
 
 const getToken =(user)=>{
   
@@ -56,4 +56,4 @@ const isAdmin =(req,res,next)=>{
     })
 }
 
-export {getToken,isAuth,isAdmin};
+module.exports = {getToken,isAuth,isAdmin};

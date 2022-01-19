@@ -1,6 +1,6 @@
-import express from "express";
-import Order from "../models/orderModel";
-import {isAuth, isAdmin} from "../utils";
+const  express= require ("express");
+const  Order = require ("../models/orderModel");
+const  {isAuth, isAdmin} = require ("../utils");
 
 const router =express.Router();
 
@@ -32,7 +32,7 @@ router.get('/:id',isAuth, async(req,res)=>{
 
 
 router.delete("/:id",isAuth,isAdmin, async(req,res)=>{
-    const order =await.findOne({
+    const order =await Order.findOne({
         _id: req.params.id
     });
     if(order){
@@ -84,4 +84,4 @@ router.put ("/:id/pay",isAuth, async (req,res)=>{
 
     }
 });
-export default router;
+module.exports =router;

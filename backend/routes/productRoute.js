@@ -1,6 +1,6 @@
-import express  from "express";
-import Product from "../models/productModel";
-import {isAuth, isAdmin} from "../utils";
+const  express  = require("express");
+const  Product = require ("../models/productModel");
+const  {isAuth, isAdmin} = require ("../utils");
 
 const router=express.Router();
 
@@ -130,4 +130,4 @@ router.post('/:id/reviews', isAuth, async(req,res)=>{
         })
     }
 })
-export  default router;
+ module.exports= router;

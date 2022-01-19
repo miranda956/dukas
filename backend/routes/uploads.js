@@ -1,8 +1,8 @@
-import express from "express";
-import multer from "multer";
-import multerS3 from "multer-s3";
-import aws from 'aws-sdk';
-import config from "../config";
+const  express = require ("express");
+const  multer = require ("multer");
+const  multerS3 = require("multer-s3");
+const  aws = require('aws-sdk');
+const  config = require("../config");
 
 const storage = multer.diskStorage({
     destination(req,res,cb){
@@ -45,4 +45,4 @@ router.post('/s3', uploadS3.single('image'),(req,res)=>{
 
 });
 
-export default router;
+module.exports = router;
